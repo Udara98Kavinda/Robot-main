@@ -34,11 +34,11 @@ void setup() {
 void loop() {
   Serial.println("Leftcounter: " + String(encoderCount_Left));
   Serial.println("Rightcounter: " + String(encoderCount_Right));
-  //read_IR_sensors(readings);
-  //digitalize_with_calibrated_threshold(readings, thresholds, digital);
-  //error = calculate_error(digital);
-  //pid_output = compute_pid(error, previous_error, KP, KD);
-  //previous_error = error;
+  read_IR_sensors(readings);
+  digitalize_with_calibrated_threshold(readings, thresholds, digital);
+  error = calculate_error(digital);
+  pid_output = compute_pid(error, previous_error, KP, KD);
+  previous_error = error;
   
   forward(100, 100, pid_output); // Use PID output for correction
   
