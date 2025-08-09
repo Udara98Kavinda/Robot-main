@@ -12,9 +12,9 @@ void turnLeft() {
     encoderCount_Right = 0;
     backward(100, 0, 0); // left backward
     forward(0, 100, 0);  // right forward
-    while (encoderCount_Left > -150 || encoderCount_Right < 150) {
-        if (encoderCount_Left <= -150) backward(0, 0, 0);
-        if (encoderCount_Right >= 150) forward(0, 0, 0);
+    while (encoderCount_Left > -170 || encoderCount_Right < 150) {
+        if (encoderCount_Left <= -170) backward(0, 0, 0);
+        if (encoderCount_Right >= 170) forward(0, 0, 0);
     }
     stopMotors();
 }
@@ -25,9 +25,9 @@ void turnRight() {
     encoderCount_Right = 0;
     forward(100, 0, 0); // left forward
     backward(0, 100, 0); // right backward
-    while (encoderCount_Right > -150 || encoderCount_Left < 150) {
-        if (encoderCount_Right <= -150) backward(0, 0, 0);
-        if (encoderCount_Left >= 150) forward(0, 0, 0);
+    while (encoderCount_Right > -170 || encoderCount_Left < 150) {
+        if (encoderCount_Right <= -750) backward(0, 0, 0);
+        if (encoderCount_Left >= 170) forward(0, 0, 0);
     }
     stopMotors();
 }
