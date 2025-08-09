@@ -25,35 +25,6 @@ void handleCrossApproach() {
 }
 
 // Main cross detection handler
-void handleCross(char crossType, bool Lleft = false, bool Lright = false) {
-    handleCrossApproach();
-    if (crossType == '+' || crossType == 'T') {
-        stopMotors();
-        // Turn right
-        backward(0, 100, 0); // right backward
-        forward(100, 0, 0);  // left forward
-        delay(500); // adjust as needed for turn
-        stopMotors();
-        crossArray[crossIndex++] = 'R';
-    } else if (crossType == 'L' && Lright) {
-        stopMotors();
-        // Turn right
-        backward(0, 100, 0);
-        forward(100, 0, 0);
-        delay(500);
-        stopMotors();
-        crossArray[crossIndex++] = 'R';
-    } else if (crossType == 'L' && Lleft) {
-        stopMotors();
-        // Turn left
-        backward(100, 0, 0);
-        forward(0, 100, 0);
-        delay(500);
-        stopMotors();
-        crossArray[crossIndex++] = 'L';
-    }
-}
-
 void handleSpecialCross(const char* crossType, const int analog_readings[9], const int thresholds[9]) {
     int irArray[9];
     // Move a bit forward before checking
